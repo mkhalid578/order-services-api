@@ -1,9 +1,11 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
-from sqlalchemy import create_engine
+from flask.ext.sqlalchemy import SQLAlchemy
 from json import dumps
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI] = os.environ['DATABASE_URL']
+db = SQLAlchemy(app)
 api = Api(app)
 
 @app.route('/')
