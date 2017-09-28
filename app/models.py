@@ -34,9 +34,5 @@ class Order(db.Model):
     def __repr__(self):
         return '<Name %r>' % self.name
 
-    
 
-order = Order("muhammed","khalid","mkhalid@uml.edu","Engineer")
-db.session.add(order)
-db.session.commit()
 

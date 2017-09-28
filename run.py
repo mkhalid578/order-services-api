@@ -1,5 +1,5 @@
-from deploy import app, api
-from models import User
+from app.deploy import app, api
+from app.models import User
 from flask_restful import Api, Resource
 
 @app.route('/')
