@@ -1,6 +1,10 @@
 from app.deploy import app, api
 from app.models import User
 from flask_restful import Api, Resource
+import os
+
+port = int(os.environ.get('PORT', 5000))
+
 
 @app.route('/')
 def index():
@@ -14,4 +18,4 @@ class UserData(Resource):
 
 api.add_resource(UserData, '/data/<string:email>')
 
-app.run()
+app.run(host='0.0.0.0', port=port)
