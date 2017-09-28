@@ -14,6 +14,4 @@ class UserData(Resource):
 
 api.add_resource(UserData, '/data/<string:email>')
 
-
-
-app.run()
+app.run(debug=True)
