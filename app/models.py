@@ -16,7 +16,7 @@ class  User(db.Model):
 
     def __repr__(self):
         return '<Name %r>' % self.name
-
+    
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     firstName = db.Column(db.String(80))
@@ -25,7 +25,7 @@ class Order(db.Model):
     position = db.Column(db.String(80))
 
     def __init__(self, firstName, lastName, email, position):
-	db.create_all()
+        db.create_all()
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -33,6 +33,3 @@ class Order(db.Model):
 
     def __repr__(self):
         return '<Name %r>' % self.name
-
-
-
