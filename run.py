@@ -14,4 +14,3 @@ class UserData(Resource):
 
 api.add_resource(UserData, '/data/<string:email>')
 
-app.run(debug=True)
