@@ -1,4 +1,4 @@
-from deploy import db
+from .deploy import db
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 import json
@@ -16,7 +16,7 @@ class  User(db.Model):
 
     def __repr__(self):
         return '<Name %r>' % self.name
-    
+
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     firstName = db.Column(db.String(80))

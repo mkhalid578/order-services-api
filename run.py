@@ -16,4 +16,4 @@ api.add_resource(UserData, '/data/<string:email>')
 
 
 
-app.run(host="0.0.0.0", port="8000")
+app.run()
