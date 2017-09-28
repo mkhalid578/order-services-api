@@ -1,5 +1,16 @@
 import os
 
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+HOST = "0.0.0.0"
+
+PORT = 5000
+
+DEBUG = False
+
+SECRET_KEY = "4245fdkfj3424-42k4-4243-434$%#"
+
 DATABASE_CONFIG = {
     "DB_NAME": "d9vfqpvte2ppn3",
     "USERNAME": "iyrqdnemwmiawj",
@@ -11,3 +22,4 @@ DATABASE_CONFIG = {
 SQL_DATABASE_URI = \
                    "postgres://{USERNAME}:{PASSWORD}@{LOCATION}:{PORT}/{DB_NAME}".format(**DATABASE_CONFIG)
 
+SQLALCHEMY_TRACK_MODIFICATIONS = True
