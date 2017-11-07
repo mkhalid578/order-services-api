@@ -11,8 +11,10 @@ db = SQLAlchemy(app)
 api = Api(app)
 
 @app.route("/")
+def startPage():
+	return "<h1> Default Page </h1>"
+
 @app.route("/web")
 def index():
     return render_template("index.html")
 
-app.run()
