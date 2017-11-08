@@ -1,5 +1,4 @@
-from .deploy import db
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from deploy import db
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -17,19 +16,24 @@ class  User(db.Model):
     def __repr__(self):
         return '<Name %r>' % self.name
 
-class Order(db.Model):
+class OrderInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    firstName = db.Column(db.String(80))
-    lastName = db.Column(db.String(80))
-    email = db.Column(db.String(120))
-    position = db.Column(db.String(80))
+    email = db.Column(db.String(80))
+    itemName  = db.Column(db.String(80))
+    quantity = db.Column(db.Integer)
+    cost = db.Column(db.Float)
+    description = db.Column(db.String(250))
 
-    def __init__(self, firstName, lastName, email, position):
+    class Meta:
+        database = db
+
+    def __init__(self, email, itemName, quantity, description, cost):
         db.create_all()
-        self.firstName = firstName
-        self.lastName = lastName
         self.email = email
-        self.position = position
+        self.itemName = itemName
+        self.quantity = quantity
+        self.description = description
+        self.cost = cost
 
     def __repr__(self):
-        return '<Name %r>' % self.name
+        return '<Name %r>' % self.itemName
