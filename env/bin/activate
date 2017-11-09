@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/mkhalid/Desktop/CS412/order-services/env"
+VIRTUAL_ENV="/Users/mkhalid/Desktop/CS412/order-services-api/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,16 +1,6 @@
-from app.deploy import app, api
-from app.models import User
-from flask_restful import Api, Resource
+import config
 
-@app.route('/')
-def index():
-    return '<h1> Welcome </h1>'
+from app import app, db
 
-class UserData(Resource):
-    def get(self, email):
-        user = User.query.filter_by(email=str(email)).first()
-        result = {'data' : user.name}
-        return result
-
-api.add_resource(UserData, '/data/<string:email>')
-
+if __name__ == '__main__':
+	app.run(debug=config.DEBUG, host=config.HOST, port=config.PORT)
