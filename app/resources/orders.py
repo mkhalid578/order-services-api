@@ -59,18 +59,30 @@ class OrderList(Resource):
 			return Response(500)
 
 		else:
-			return
+			return Response(json.dumps(marshal(order, order_fields)), 200)
 
 class Order(Resource):
 
 	@marshal_with(order_fields)
 	def get(self, id):
 		return get_order_or_404(id)
-	
+
 	def put(self, id):
 		return jsonify({'order': 'Chocolate'})
-	def delete(self, id):
-		return jsonify({'order': 'Chocolate'})
+
+	def delete(self, pk):
+		order = deletedRecord = OrderInfo.query.get(pk)
+		if not order:
+			return Response(404)
+
+		order.delete()
+		payload = json.dumps (
+		 {
+		 	"Deleted Record":[marshal(deletedRecord, order_fields)]
+		 })
+		 
+		return Response(payload, 200, mimetype='application/json')
+
 
 orders_api = Blueprint('resources.orders', __name__)
 api = Api(orders_api)
@@ -83,4 +95,4 @@ api.add_resource(
 api.add_resource (
 	Order,
 	'/api/v1/order/<int:id>',
-	endpoint='order')
+	'/api/v1/orders/<int:pk>')
