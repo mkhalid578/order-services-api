@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.jumbotron-dashboard{
+	margin:15px;
+  background-image: url("view-order.svg");
+  background-image: url("place-order.png");
+  background-position-y: bottom;
+  background-size: 200px 170px;
+  background-repeat: no-repeat;
+	background-color: white;
+	border: 3px solid;
+	border-width: medium;
+	border-color: firebrick;
+	border-radius: 2.0rem;
+}
+
+.title-dashboard{
+	color: darkgoldenrod;
+}
+
+.dashboard-opt {
+    margin: 30px;
+    padding-top: 30px;
+}
+
+.btn-view-order{
+	margin-right: 20px;
+	line-height: 2.0;
+	border-width: thick;
+}
+.btn-place-order{
+	line-height: 2.0;
+	border-width: thick;
+}
+.btn-delete-order{
+	margin-left: 20px;
+	line-height: 2.0;
+	border-width: thick;
+}

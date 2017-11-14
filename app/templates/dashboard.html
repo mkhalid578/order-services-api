@@ -4,18 +4,20 @@
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Order Processing Service</title>
+    <link rel="stylesheet" href="style_dashboard.css">
     </head>
     <body>
-      {% block body %}
 
-      <div class="jumbotron" style="margin:15px;">
+      <div class="jumbotron jumbotron-dashboard">
         <div class="text-center">
-          <h2> Order Services Dashboard </h2>
+          <h1 class="title-dashboard"> Order Services Dashboard </h1>
         </div>
-        <div class="text-center" style="margin:30px;">
-          <button class="btn btn-outline-success" type="submit" name="action"> View Orders </button>
-          <button class="btn btn-outline-primary" type="submit" name="action" data-toggle="modal" data-target="#placeOrder"> Place Order </button>
-          <button class="btn btn-outline-danger" type="submit" name="action"> Delete Order </button>
+        <div class="text-center dashboard-opt">
+          <button class="btn btn-outline-success btn-view-order" type="submit" name="action"> View Orders </button>
+          <button class="btn btn-outline-primary btn-place-order" type="submit" name="action" data-toggle="modal" data-target="#placeOrder"> Place Order </button>
+          <button class="btn btn-outline-danger  btn-delete-order" type="submit" name="action"> Delete Order </button>
         </div>
       </div>
 
@@ -64,6 +66,5 @@
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-      {% endblock %}
     </body>
 </html>
