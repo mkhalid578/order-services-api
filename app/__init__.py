@@ -53,7 +53,7 @@ def dashboard_user_email():
     return current_user_email
 
 
-@app.route('/dashboard/place-order', methods=['GET'])
+@app.route('/dashboard/place-order', methods=['POST'])
 #@login_required
 def dashboard_place_order():
     new_order_data = request.args.get('key')
