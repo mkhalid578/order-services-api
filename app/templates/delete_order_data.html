@@ -1,0 +1,63 @@
+
+<div class="tab-pane order-table" id="delete-order-data" style="display: none;" >
+  <table id="placed-order-editing-table" class="display"
+	 width="100%" style="text-align: center;"></table>
+</div>
+
+
+<div class="modal fade" id="DeleteOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="DeleteOrderlLabel">Delete Order</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom:5%;">
+                    <span class="input-group-addon" id="delete-order-email">@-Email-ID</span>
+                    <input id="delete-order-email-data" type="text" class="form-control" placeholder="Email Address" aria-describedby="basic-addon1" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom:10px;">
+                    <span class="input-group-addon" id="delete-order-itemName"><i class="fa fa-book" aria-hidden="true"></i>-Item</span>
+                    <input id="delete-order-itemName-data"  type="text" class="form-control" placeholder="Item Name" aria-describedby="basic-addon1"  readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom:10px;">
+                    <span class="input-group-addon" id="delele-order-quantity">#-Quantity</span>
+                    <input id="delete-order-quantity-data"   type="text" class="form-control" placeholder="Quantity" aria-describedby="basic-addon1" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom:10px;">
+                    <span class="input-group-addon" id="delete-order-cost">$-Cost</span>
+                    <input id="delete-order-cost-data"  type="text" class="form-control" placeholder="Cost" aria-describedby="basic-addon1" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="reason">Reason:</label>
+                  <textarea class="form-control" id="delete-order-reason-data" rows="3" placeholder="I need this because..."  readonly></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id="delete-order-submit" type="button" class="btn btn-primary">Delete Order</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+

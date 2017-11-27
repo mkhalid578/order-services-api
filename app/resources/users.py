@@ -18,11 +18,11 @@ user_fields = {
 
 def get_user_or_404(user_id):
     try:
-        order = UserInfo.query.filter_by(id=user_id).first()
+        login_user = UserInfo.query.filter_by(id=user_id).first()
     except Exception as e:
         abort(404)
     else:
-        return order
+        return login_user
 
 class UserList(Resource):
     def __init__(self):
@@ -79,3 +79,14 @@ api.add_resource (
 	'/api/v1/user/<int:id>',
 	endpoint='user'
 )
+
+
+
+def check_login_user(email_id):
+    try:
+        login_user = UserInfo.query.filter_by(email=email_id).first()
+    except Exception as e:
+        abort(404)
+    else:
+        return login_user
+

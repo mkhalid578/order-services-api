@@ -2,6 +2,7 @@
 
 .jumbotron-dashboard{
 	margin:15px;
+  margin-top: 80px;
   background-image: url("view-order.svg");
   background-image: url("place-order.png");
   background-position-y: bottom;
@@ -37,3 +38,15 @@
 	line-height: 2.0;
 	border-width: thick;
 }
+
+.order-table {
+  margin: 70px;
+}
+
+
+.user-logout-btn{
+  background-color: firebrick;
+  color: white;
+  margin-right: 25px;
+}
+
