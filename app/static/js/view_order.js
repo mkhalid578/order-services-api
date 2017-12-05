@@ -62,24 +62,29 @@ $(document).ready(function(){
                            document.getElementById("place-order-error").style.display ="block";
                     } else {
                         var obj_data = {
-                                      "order-email-id" : $("#place-order-email").val(),
-                                      "order-item-name" : $("#place-order-item-name").val(),
-                                      "order-item-quentities" : $("#place-order-quantity").val(),
-                                      "order-item-cost" : $("#place-order-cost").val(),
-                                      "order-reason" : $("#place-order-reason").val()
-                                   }
-                        var new_order_data = JSON.stringify(obj_data);
+                                      "email" : $("#place-order-email").val(),
+                                      "itemName" : $("#place-order-item-name").val(),
+                                      "quantity" : $("#place-order-quantity").val(),
+                                      "cost" : $("#place-order-cost").val(),
+                                      "description" : $("#place-order-reason").val()
+                                   };
+                        //var new_order_data = JSON.stringify(obj_data);
+                        var new_order_data = obj_data;
                         console.log(new_order_data);
+                        /*
                         $.ajax({
-                            type : "GET",
-                            url : "/dashboard/place-order",
-                            data : { key : new_order_data},
-                            dataType : 'json',
+                            type : "POST",
+                            url:  "/api/v1/orders",
+                            data : new_order_data,
+                            dataType : "json",
                             contentType : 'application/json; charset=utf-8',
                             success : function(data) {
                                console.log(data);
                             }
                         });
+                        */
+                        $.post("/api/v1/orders", new_order_data, function (result) {
+                                    console.log(result);} );
 
                        // clear form
                           $("#place-order-item-name").val("");
